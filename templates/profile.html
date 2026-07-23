@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="uz" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Profile</title>
+    <link rel="icon" href="{{ url_for('static', filename='telegram.png') }}" type="image/png">
+
+    <style>
+        * {
+            user-select: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 dark:bg-[#1E1E1E] transition-colors duration-300 min-h-screen flex items-center justify-center">
+
+    <div class="bg-white dark:bg-[#1E1E1E] p-8 rounded-[3rem] shadow-xl w-96 text-center">
+        <div class="mb-6">
+            <img src="{{ url_for('static', filename='image.jpg') }}"
+                 alt="Profile"
+                 class="w-32 h-32 rounded-full mx-auto border-4 border-sky-500 object-cover shadow-lg">
+        </div>
+
+<!--        <h2 class="text-3xl font-bold text-gray-800 dark:text-white capitalize">{{ user.name }}</h2>-->
+<!--        <p class="text-gray-500 dark:text-gray-400 mt-2">Yosh: {{ user.age }}</p>-->
+<!--        <p class="text-gray-500 dark:text-gray-400 mt-2">Email: {{ user.email }}</p>-->
+
+        <p class="text-xl font-bold text-gray-800 dark:text-white capitalize">{{ user.result }}</p>
+
+        <div class="mt-6 border-t border-gray-200 dark:border-[#1E1E1E] pt-6">
+            <a href="/" class="text-sky-500 hover:underline">Bosh sahifaga qaytish</a>
+        </div>
+    </div>
+
+</body>
+</html>

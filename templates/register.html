@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="uz" class="light">
+<head>
+    <title>Register</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="{{ url_for('static', filename='telegram.png') }}" type="image/png">
+
+    <script>
+        tailwind.config = { darkMode: 'class' }
+        function toggleDark() { document.documentElement.classList.toggle('dark'); }
+    </script>
+
+    <style>
+        * {
+            user-select: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 dark:bg-[#1E1E1E] transition-colors duration-300 min-h-screen flex items-center justify-center">
+
+    <div class="bg-white dark:bg-[#1E1E1E] p-8 rounded-[3rem] shadow-xl w-96 duration-300">
+<!--        <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-6">Register</h2>-->
+
+<!--        <form action="/register" method="POST" class="flex gap-4 flex-col">-->
+<!--            <input type="text" name="name" placeholder="Ism" class="w-full p-3 rounded-3xl border dark:bg-[#1E1E1E] dark:text-white" required>-->
+<!--            <input type="number" name="age" placeholder="Yosh" class="w-full p-3 rounded-3xl border dark:bg-[#1E1E1E] dark:text-white" required>-->
+<!--            <input type="email" name="email" placeholder="Email" class="w-full p-3 rounded-3xl border dark:bg-[#1E1E1E] dark:text-white" required>-->
+<!--            <button class="w-full bg-sky-600 text-white p-3 rounded-3xl hover:bg-sky-700 duration-200">Yuborish</button>-->
+<!--        </form>-->
+
+        <form action="/register" method="POST" class="flex gap-4 flex-col">
+            <select name="valyuta" id="valyuta" class="rounded-full w-full p-3 border dark:bg-[#1E1E1E] dark:text-white">
+                {% for valyuta in valyutalar %}
+                    <option value="{{ valyuta }}">{{ valyuta }}</option>
+                {% endfor %}
+            </select>
+
+            <input type="number" class="w-full p-3 rounded-3xl border dark:bg-[#1E1E1E] dark:text-white" name="summ" placeholder="summ" required>
+
+           <button class="w-full bg-sky-600 text-white p-3 rounded-3xl hover:bg-sky-700 duration-200">Submit</button>
+        </form>
+
+        <button onclick="toggleDark()" class="mt-4 text-sm text-sky-500 dark:text-sky-400 underline">Dark/Light Mode</button>
+    </div>
+</body>
+</html>
